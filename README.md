@@ -1,15 +1,1 @@
-- [x] Create a readme
-- [x] Add `memes` to the `.gitignore`
-- [x] Set a variable with the URL to the website
-- [x] Request HTML information from the URL (maybe "fetch get request")
-- [x] Save this HTML into a variable called `htmlContent` (string)
-- [ ] Inside `htmlContent`:
-  - [ ] look for all matching elements (maybe an `<a>` element that contains an image or maybe an `<img />`)
-  - [ ] extract the img `src` attribute (string)
-  - [ ] assign this array of strings to a new variable called `imgSrcs` / `links` / `imageUrls`
-- [ ] Filter the array to create a new array of only 10 elements
-- [ ] Make a folder named `memes`
-- [ ] Loop through each URL in the image urls and
-  - [ ] Request image data (jpg data)
-  - [ ] Save image data to a new file named `01.jpg`, `02.jpg`, etc in the memes folder
-- [ ] Maybe at the beginning, before each of run of the program, we want to also clean the folder so that there are no conflicts?
+# This is a meme scraper

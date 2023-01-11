@@ -1,17 +1,16 @@
+import axios from 'axios';
 import * as cheerio from 'cheerio';
-import fetch from 'node-fetch';
 
 const url = 'https://memegen-link-examples-upleveled.netlify.app/';
 
-const htmlContent = fetch(
-  'https://memegen-link-examples-upleveled.netlify.app/',
-)
-  //In this line, we're waiting to receive the response from the  web server and converting it to text format:
+let htmlContent;
 
-  .then((res) => res.text())
+await axios.get(url).then((response) => {
+  htmlContent = response.data;
+});
 
-  //Here we're waiting for the result of the previous conversion and printing it to the console:
+const $ = cheerio.load(htmlContent);
 
-  .then((text) => console.log(text));
-
-console.log(htmlContent);
+$('a').each((i, elem) => {
+  console.log($(elem).find('img').attr('src'));
+});
